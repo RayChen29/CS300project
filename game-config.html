@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Game Configuration</title>
+        <!--CSS files-->
+        <link rel="stylesheet" href="game-config.css"> 
+    </head>
+
+    <body>
+        <!--Main content of page-->
+        <!--
+            Using form to select the initial values for the state variables: location, enery, supplies, credits, 
+            fixed wormhole behavior random wormhole behavior, regular play/never dies 
+        -->
+        <form>
+            <div id="main-container">
+                <!-- Header title for game configuration -->
+                <h1 style="text-align: center; margin-bottom: 35px;"><b>GAME CONFIGURATION</b></h1>
+
+                <!-- Game Size -->
+                <div class="row">
+                    <div class="col-33-label"><label for=game-size><b>Game Size (X x Y): </b></label></div>
+                    <div class="col-33-input"><i>X = </i><input type="text" name="x_game_size" id="x_game_size" style="width: 64%;" value="128"></div>
+                    <div class="col-33-input"><i>Y = </i><input type="text" name="y_game_size" id="y_game_size" style="width: 64%;" value="128"></div>
+                </div>
+
+                <!-- Initial location -->
+                <div class="row">
+                    <div class="col-33-label"><label for=loc><b>Initial Location (X, Y): </b></label></div>
+                    <div class="col-33-input"><i>X = </i><input type="text" name="x_loc" id="LocationX" style="width: 64%;" value="100" placeholder="X-coordinate"></div>
+                    <div class="col-33-input"><i>Y = </i><input type="text" name="y_loc" id="LocationY" style="width: 64%;" value="100" placeholder="Y-coordinate"></div>
+                </div>
+
+                <div class="row">
+                    <!-- Energy -->
+                    <div class="col-15-label"><label for="energy"><b>Energy: </b></label></div>
+                    <div class="col-15-input"><input type="text" name="energy" id="Energy" style="width: 100%;" value="1000" placeholder="Energy"></div>
+
+                    <!-- Supplies -->
+                    <div class="col-15-label" style="padding-left: 35px;"><label for="supplies"><b>Supplies: </b></label></div>
+                    <div class="col-15-input"><input type="text" name="supplies" id="Supplies" style="width: 100%;" value="100" placeholder="Supplies"></div>
+
+                    <!-- Credits -->
+                    <div class="col-15-label" style="padding-left: 35px;"><label for="credits"><b>Credits: </b></label></div>
+                    <div class="col-15-input"><input type="text" name="credits" id="Credits" style="width: 100%;" value="1000" placeholder="Credits"></div>
+                </div>
+                
+                <!-- Wormholes -->
+                <div class="form-inline">
+                    <label for="wormhole" style="padding: 15px;"><b>Wormhole behavior: </b></label>
+                    <label>Fixed</label>
+                    <label class="switch">
+                        <input type="checkbox" name="wormhole_behavior" id="wormhole_behavior">
+                        <span class="slider round"></span>
+                    </label>
+                    <label>Random</label>
+                </div>
+
+
+                <!-- Fixed Wormholes location -->
+                <div id="fixed_worm_loc">
+                    <div class="row">
+                        <div class="col-33-label"><label for=fixed-worm-loc><b>Fixed Wormhole Location (X, Y): </b></label></div>
+                        <div class="col-33-input"><i>X = </i><input type="text" name="x_fixed_worm_loc" id="x_fixed_worm_loc" style="width: 64%;" value="50" placeholder="X-coordinate"></div>
+                        <div class="col-33-input"><i>Y = </i><input type="text" name="y_fixed_worm_loc" id="y_fixed_worm_loc" style="width: 64%;" value="50" placeholder="Y-coordinate"></div>
+                    </div>
+                </div>
+
+                <!-- Wormholes -->
+                <div class="form-inline">
+                    <label for="player-status" style="padding: 15px;"><b>Player Status: </b></label>
+                    <label>Regular play</label>
+                    <label class="switch">
+                        <input type="checkbox" name="player-status" id="player-status">
+                        <span class="slider round"></span>
+                    </label>
+                    <label>Never dies</label>
+                </div>
+
+                <br><br>
+                <div class="row">
+                    <div class="center col-50"><a type="submit" id="game-config-sub-btn" class="game-config-btn" target="_self" href="./coreSHux.html">Submit Data</a> </div>
+                    <div class="center col-50"><a type="submit" id="game-config-cancel-btn" class="game-config-btn" target="_self" href="./coreSHux.html">Cancel</a> </div>
+                </div>
+            </div>
+        </form>
+
+        <!--Javascript files-->
+        <script type="text/javascript" src="game-config.js"></script>
+    </body>
+</html>

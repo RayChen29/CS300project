@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <style>
+        .core-game-btn {
+            width: 40%;
+            padding: 16px;
+            border-radius: 12px;
+            cursor: pointer;
+            opacity: 1;
+            background-color: rgb(20, 20, 20);
+            color: white;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+            text-decoration: none;
+        }
+
+        .core-game-btn:hover {
+            opacity: 1;
+            color: black;
+            background-color: #fffc3c;
+            text-decoration: none;
+        }
+    </style>
+
+    <!--JAVASCRIPT files-->
+	<script src="objects.js"></script>
+	<script src="sensor.js"></script>
+	<script src="asteroid.js"></script>
+    <script src="jsFunction.js"></script>
+	<script src="map.js"></script>
+    <body onload=initializeState()>
+    <script src="Movement.js"></script>
+  <script src="Celestial Artifacts.js"></script>
+
+
+
+    <h1>SpaceHunt 0.1</h1>
+    <form>
+        Distance (0-128): <input type="number" name="distance" id="distance">
+    </form>
+
+    <table>
+        <tr><td></td><td><button type="button" onClick="makeMove('90', document.getElementById('distance').value)">90<sup>o</sup></button></td><td></td></tr>
+        <tr><td><button type="button" onClick="makeMove('180', document.getElementById('distance').value)">180<sup>o</sup></button></td><td></td>
+        <td><button type="button" onClick="makeMove('0', document.getElementById('distance').value)">0<sup>o</sup></button></td></tr>
+        <tr><td></td><td><button type="button" onClick="makeMove('270', document.getElementById('distance').value)">270<sup>o</sup></button></td><td></td></tr>
+        <tr><td></td><td><button type="button" onClick="sensor_button()">Sensor</button></td><td></td></tr>
+    </table>
+    <hr>
+
+    <br>
+    <h2>Current Status</h2>
+    <form>
+        Game Size:                  <input id="game-size" type="text" size=6 maxlength=20><br>
+        Wormhole Behavior:          <input id="wormhole-behavior" type="text" size=6 maxlength=20><br>
+        Location:                   <input id="location" type="text" size=6 maxlength=20><br>
+        Energy:                     <input id="energy" type="text" size=6 maxlength=6><br>
+        Supplies:                   <input id="supplies" type="text" size=6 maxlength=6><br>
+        Credits:                    <input id="credits" type="text" size=6 maxlength=6><br>
+        Player Status:              <input id="player-status" type="text" size=6 maxlength=10><br>
+	    Ship Condition:		        <input id="ship-condition" type="text" size=6 maxlength=10><br>
+        Location After Moving Out Of Wormhole:          <input id="wormhole-location" type="text" size=6 maxlength=20><br>
+        Message:                    <input id="message" type="text" size=80 maxlength=80><br>
+		Map:						<textarea id="map"></textarea><br> <br>
+
+        List of wormhole locations on map: <br>
+        Location 1:          (<input id="list-wormhole-location1" type="text" size=6 maxlength=20>)<br>
+        Location 2:          (<input id="list-wormhole-location2" type="text" size=6 maxlength=20>)<br>
+        Location 3:          (<input id="list-wormhole-location3" type="text" size=6 maxlength=20>)<br>
+    </form>
+    <br>
+
+    <div><a type="submit" id="open-game-config" class="core-game-btn" target="_self" href="./game-config.html">OPEN GAME CONFIG</a> </div>
+    <div><button onclick="add_object()" class="core-game-btn" target="_self">ADD CELESTIAL ARTIFACT</button> </div>
+
+    <!--JAVASCRIPT files-->
+    <script src="check-status.js"></script>
+</html>
